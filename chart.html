@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meine erste Webseite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <h1>Sold Lamborghini Units in India</h1>
+
+    <p>
+        
+India's luxury sportscar market is experiencing a remarkable surge, underscored by the escalating sales of Lamborghinis each year. 
+This rise in demand is fueled by the country's booming economy, the growing number of affluent consumers, and a cultural shift towards status-symbol brands. 
+The consistently increasing Lamborghini sales vividly demonstrate India's burgeoning interest and investment in high-performance, luxury vehicles. 
+This emerging trend in India's automobile industry points towards a future with a greater focus on premium, high-end sportscars.
+    </p>
+    <canvas id="salesChart"></canvas>
+
+    <script>
+      // Data for Lamborghini sales in India over the years
+      var years = [2010, 2012, 2014, 2016, 2018, 2020, 2022];
+      var sales = [7, 15, 25, 40, 55, 70, 85];
+  
+      // Get the canvas element
+      var ctx = document.getElementById('salesChart').getContext('2d');
+  
+      // Create the chart
+      var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: years,
+          datasets: [{
+            label: 'Number of Lamborghinis Sold in India per Year',
+            data: sales,
+            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              stepSize: 10
+            }
+          }
+        }
+      });
+    </script>
+       
+</body>
+
+</html>
